@@ -13,7 +13,7 @@ warnings.filterwarnings('ignore')
 
 @st.cache_data
 def load_data():
-    data = pd.read_csv("/content/drive/MyDrive/datasets/DailyDelhiClimateTrain_delhi_2017.csv")
+    data = pd.read_csv("https://raw.githubusercontent.com/Pkun-og/Stream_weather/main/datasets/DailyDelhiClimateTrain_delhi_2017.csv")
     data["date"] = pd.to_datetime(data["date"], format='%Y-%m-%d')
     data['year'] = data['date'].dt.year
     data["month"] = data["date"].dt.month
