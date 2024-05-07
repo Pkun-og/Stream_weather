@@ -281,7 +281,7 @@ data = load_data()
 train = load_train()
 
 # Add image to the sidebar
-st.sidebar.image("aero purity.jpg", use_column_width=True)
+
 
 # Sidebar navigation
 page = st.sidebar.selectbox("Select Page", ["Historical Weather Data (Delhi)", "Historical AQI Data (TT Nagar Bhopal)", "AQI Predictor", "Weather Predictor(Currently only Delhi)"])
