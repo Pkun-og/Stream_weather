@@ -21,7 +21,7 @@ def load_data():
 
 @st.cache_data
 def load_train():
-    train=pd.read_excel("https://github.com/Pkun-og/Stream_weather/blob/main/datasets/AQI_ttnagar_Epics.xlsx")
+    train=pd.read_excel("https://github.com/Pkun-og/Stream_weather/blob/main/datasets/AQI_ttnagar_Epics.xlsx", engine='openpyxl')
     train['Date'] = pd.to_datetime(train['Date'])
     train = train.drop(["AQI Status"], axis = 1)
     train = train.drop(["Benzene (µg/m3)"], axis = 1)
