@@ -1,3 +1,4 @@
+%%writefile app.py
 import streamlit as st
 import pandas as pd
 import seaborn as sns
@@ -47,7 +48,7 @@ def page1(data):
 
 def page2():
     st.header("AQI Historical Plot(TT Nagar Bhopal)")
-    st.subheader("This Page contains the historical Observations/plots of the AQI of TT Nagar, Bhopal")
+    st.subheader("This Page contains the historical Observations/plots of the AQI of TT Nagar, Bhopal.")
     st.markdown("<hr>", unsafe_allow_html=True)
 
     # AQI over time
@@ -68,7 +69,7 @@ def page3():
 
 def page4():
   st.header("Weather Predictor (Delhi)")
-  st.subheader("Users can this page to get predicitons of various measures of weather namely, Temperature, Humidity and Wind Speed.")
+  st.subheader("Users can use this page to get predicitons of various measures of weather namely, Temperature, Humidity and Wind Speed.")
   st.markdown("<hr>", unsafe_allow_html=True)
 
   predictions_meantemp = weather_mt_prediction(data)
@@ -280,15 +281,25 @@ def aqi_pred_specific_date(predictions_aqi):
 data = load_data()
 train = load_train()
 
+# Add image to the sidebar
+st.sidebar.image("/content/drive/MyDrive/images/aero purity.jpg", use_column_width=True)
+
 # Sidebar navigation
 page = st.sidebar.selectbox("Select Page", ["Historical Weather Data (Delhi)", "Historical AQI Data (TT Nagar Bhopal)", "AQI Predictor", "Weather Predictor(Currently only Delhi)"])
 
+def add_footer():
+    st.markdown("<hr>", unsafe_allow_html=True)
+    st.write("Made by Priyansh")
 # Render selected page
 if page == "Historical Weather Data (Delhi)":
     page1(data)
+    add_footer()
 elif page == "Historical AQI Data (TT Nagar Bhopal)":
     page2()
+    add_footer()
 elif page == "AQI Predictor":
     page3()
+    add_footer()
 elif page == "Weather Predictor(Currently only Delhi)":
     page4()
+    add_footer()
