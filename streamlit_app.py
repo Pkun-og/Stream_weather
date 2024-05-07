@@ -29,22 +29,26 @@ def load_train():
     return train
 
 def page1(data):
-    st.header("This page contains temperature, humidity, and wind speed plots.")
+    st.header("Historical Weather Plots (Delhi)")
+    st.subheader("This Page contains the plots containing historical weather data from Delhi.")
+    st.markdown("<hr>", unsafe_allow_html=True)
 
     # Mean temperature plot
-    st.subheader("Mean Temperature Over the Years")
+    st.subheader("Mean Temperature Over the Years:")
     mean_temp_overyears(data)
 
     # Humidity plot
-    st.subheader("Humidity Over the Years")
+    st.subheader("Humidity Over the Years:")
     humidity_overyears(data)
 
     # Wind speed plot
-    st.subheader("Wind Speed Over the Years")
+    st.subheader("Wind Speed Over the Years:")
     wind_speed_overyears(data)
 
 def page2():
-    st.header("Historical Observations on AQI of TT Nagar Bhopal-")
+    st.header("AQI Historical Plot(TT Nagar Bhopal)")
+    st.subheader("This Page contains the historical Observations/plots of the AQI of TT Nagar, Bhopal")
+    st.markdown("<hr>", unsafe_allow_html=True)
 
     # AQI over time
     st.subheader("AQI Overtime")
@@ -55,12 +59,17 @@ def page2():
     aqi_oty(train)
 
 def page3():
-    st.header("AQI Prediction")
+    st.header("AQI Predictor")
+    st.subheader("Users can use this page to get predictions of AQI for specific dates.")
+    st.markdown("<hr>", unsafe_allow_html=True)
+
     predictions_aqi = aqi_prediction(train)
     aqi_pred_specific_date(predictions_aqi)
 
 def page4():
-  st.header("Weather Prediction")
+  st.header("Weather Predictor (Delhi)")
+  st.subheader("Users can this page to get predicitons of various measures of weather namely, Temperature, Humidity and Wind Speed.")
+  st.markdown("<hr>", unsafe_allow_html=True)
 
   predictions_meantemp = weather_mt_prediction(data)
   specific_date_prediction_mt(predictions_meantemp)
