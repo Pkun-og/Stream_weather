@@ -5,3 +5,4 @@ plotly
 matplotlib
 prophet
 openpyxl
+numpy<2.0.0
