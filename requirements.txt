@@ -3,6 +3,5 @@ pandas
 seaborn
 plotly
 matplotlib
-numpy
 prophet
 openpyxl
